@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0053)https://www.icst.pku.edu.cn/struct/Projects/SABA.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="language" content="english">
+<title>MAAR-Net</title>
+<meta name="description" content="Online Action Detection">
+<meta name="author" content="Yanghao Li">
+<link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
+<link rel="stylesheet" type="text/css" href="./MAAR_files/project.css">
+</head>
+
+<body>
+<div id="main">
+  
+	<div class="content"><br>
+		<h1>Dual Prompt Learning for Continual Rain Removal from Single Images</h1>
+		<div class="authors">
+        	<div class="author">
+				 <a href="" style="text-decoration: none">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+			</div>
+			<div class="author">
+				<a href="https://flyywh.github.io/" style="text-decoration: none">Minghao Liu</a>
+		   </div>        
+			<div class="author">
+				 <a href="https://flyywh.github.io/" style="text-decoration: none">Wenhan Yang</a>
+		    </div>
+			<div class="author">
+				<a href="https://huyuzhang.github.io/" style="text-decoration: none">Yuzhang Hu</a>
+		   </div>
+			<div class="author">
+				 <a href="http://39.96.165.147/people/liujiaying.html" style="text-decoration: none">Jiaying Liu</a>
+			</div>
+
+
+		</div>
+		<br>
+	  	<p class="banner" align="center"><em>International Joint Conference on Artificial Intelligence (IJCAI), 2023. </em></p>
+		<div class="overview sec">
+			<div class="picture_wrapper">
+		  		<img src="./MAAR_files/slide15_00.png" width="50%" alt="Teaser">
+		  		<p style="text-align: left">Fig.1 The framework of our proposed dual prompt learning for single image rain removal. (a) The training process. (b) The framework for Task t. (c) Details of the prompt pools. First, the input adaptively selects top-N image prompts by measuring the similarity of a prompt and the input image. After selecting, the top-N prompts and the input are concatenated along the channel dimension and fed into the embedding layer together. Similarly, a subset of prompts from the feature prompt pool based on our proposed instance-wise query mechanism is selected and concatenated with embedded tokens along the token length dimension for further training. The objective is to learn to select and update prompts to instruct the transformer-based rain removal model.</p>
+	  		</div>
+	  	</div>
+
+		<div class="Abstract sec">
+			<h2>Abstract</h2>
+			<div class="desp">
+				<p style="text-align:justify">
+Recent efforts have achieved remarkable progress on single image deraining on the stationary distributed data. However, catastrophic forgetting raises practical concerns when applying these methods to real applications, where the data distributions change constantly. In this paper, we investigate the continual learning issue for rain removal and develop a novel efficient continual learned deraining transformer. Different from
+the typical replay or regularization-based methods that increase overall training time or parameter space, our method relies on compact prompts which are small learnable parameters, to maintain both task-invariant and task-specific knowledge. Our prompts are applied at both image and feature levels to leverage effectively transferred knowledge of images and features among different tasks. We conduct comprehensive experiments under widely-used rain removal datasets,
+where our proposed dual prompt learning consistently outperforms prior state-of-the-art methods. Moreover, we observe that, even though our method is designed for continual learning, it still achieves superior results on the stationary distributed data, which further demonstrates the effectiveness of our method.
+				</p>
+			</div>
+			<!-- <div align="center" id="flowchart">
+		  		<img src='SABA/figures/Flowchart.png' width='60%' >
+		  		<p style="text-align: left">Fig. 2. Architecture of the proposed joint classification-regression RNN framework for online action detection and forecasting.</p>
+	  		</div> -->
+		</div>
+
+
+		<div class="download sec">
+			<h2>Resourses</h2>
+			<div>
+				<li><strong>Paper</strong> <a href="https://ieeexplore.ieee.org/document/9180452" class="links">[pdf]</a></li>
+				<!-- <li><strong>Related Projects</strong>: <a href="http://www.icst.pku.edu.cn/struct/Projects/OAD.html">Online Action Detection</a></li> -->
+			</div>
+		</div>
+
+		<div class="citation sec">
+			<h2>Citation</h2>
+			<p class="bibtex">@article{lmh2023ijcai,
+&nbsp; title={Dual Prompt Learning for Continual Rain Removal from Single Images},
+&nbsp; author={Liu, Minghao and Yang, Wenhan and Hu, Yuzhang and Liu, Jiaying},
+&nbsp; booktitle={International Joint Conference on Artificial Intelligence (IJCAI)},
+&nbsp; year={2023},
+}
+			</p>
+		</div>
+
+<!-- 		<div class="experiments sec">
+			<h2>Additional Results</h2>
+			<div id="images">
+				<h3>Action Detection Performance</h3>
+				<div align="center" id="table">
+					<p>Table 1. F 1−Score on OAD dataset</p>
+					<img src='OAD/figures/OAD_table.png' width='50%' >
+				</div>
+			</div>
+		</div>
+		<br></br> -->
+
+		<div class="results_sec">
+			<h2>Feature Compression Results</h2>
+			<div align="center">
+				<img align="center" src="./MAAR_files/result1.png" width="60%">
+				<p style="text-align: center">Table 1.  Comparison of quantitative results in terms of PSNR
+					and SSIM. The models are trained sequentially on task sequence Rain800-Rain100H using continual learning methods. The baseline is trained on Rain800 solely. All the experiments are tested
+					on Rain800. </p>
+				<img align="center" src="./MAAR_files/result2.png" width="60%">
+				<p style="text-align: center">Table 2.  Comparison of quantitative results in terms of PSNR
+					and SSIM. The models are trained sequentially on task sequence Rain800-Rain100L using continual learning methods and tested on
+					Rain800. </p>
+				<br>
+				<img align="center" src="./MAAR_files/vision.png" width="100%">
+				<p style="text-align: center">Fig 2. Visual comparison of rain streak removal results generated from the continual learning process using baseline. (a) Input: rainy
+					images from Rain800; (b) Task 0: train and test on Rain800; (c) Task 1 with SI: train on Rain800-Rain100H sequentially and independently
+					(SI) and test on Rain800; (d) Task 1 with replay: train on Rain800-Rain100H sequentially with rehearsal and test on Rain800; (e) Task 1
+					with PIGWM: train on Rain800-Rain100H sequentially with parameter regularization and test on Rain800; (f) Task 1 with DPL: train on
+					Rain800-Rain100H sequentially with dual prompt learning and test on Rain800; (g) GT: clean image.</p>
+			</div>
+		</div>
+
+
+
+  </div>
+</div>
+
+
+</body></html>
